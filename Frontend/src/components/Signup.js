@@ -10,7 +10,7 @@ const Signup = (props) => {
   const navigate = useNavigate();
 
   const checkEmailExists = async (email) => {
-    const response = await fetch(`http://localhost:5000/routes/auth/checkemail?email=${encodeURIComponent(email)}`);
+    const response = await fetch(`https://inotebook-backend-virid.vercel.app/routes/auth/checkemail?email=${encodeURIComponent(email)}`);
     const json = await response.json();
     return json.exists;
   };
@@ -36,7 +36,7 @@ const Signup = (props) => {
     }
 
     // Proceed with signup
-    const response = await fetch("http://localhost:5000/routes/auth/createuser", {
+    const response = await fetch("https://inotebook-backend-virid.vercel.app/routes/auth/createuser", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ const Signup = (props) => {
       localStorage.setItem('token', json['auth-token']); // Save token
 
       // Fetch user details
-      const userResponse = await fetch("http://localhost:5000/routes/auth/getUser", {
+      const userResponse = await fetch("https://inotebook-backend-virid.vercel.app/routes/auth/getUser", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

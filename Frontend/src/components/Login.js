@@ -8,7 +8,7 @@ const Login = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/routes/auth/login", {
+    const response = await fetch("https://inotebook-backend-virid.vercel.app/routes/auth/login", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ const Login = (props) => {
       localStorage.setItem('token', json.authToken); // Save token
 
       // Fetch user details
-      const userResponse = await fetch("http://localhost:5000/routes/auth/getUser", {
+      const userResponse = await fetch("https://inotebook-backend-virid.vercel.app/routes/auth/getUser", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
