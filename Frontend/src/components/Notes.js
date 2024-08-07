@@ -80,7 +80,7 @@ const Notes = (props) => {
       <div className="row my-3">
         <h2 style={{color:(props.mode==='light')?'black':'white'}} >Your Notes</h2>
         <div className='container mx-2'>
-          {initialized && notes.length === 0 && <h5>No notes to display</h5>}
+          {initialized && notes.length === 0 && <h5 style={{color:(props.mode==='light')?'black':'white'}}>No notes to display</h5>}
         </div>
         {notes.map((note) => (
           <NoteItem key={note._id} updateNote={updateNote} showAlert={props.showAlert} note={note} />
