@@ -28,13 +28,13 @@ const NavBar = (props) => {
                 <Link className={`nav-link ${location.pathname === '/about' ? "active" : ""}`} to="/about">AboutUs</Link>
               </li>
             </ul>
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center flex-column flex-lg-row">
               {!localStorage.getItem('token') ?
                 <form className="d-flex">
-                  <Link className="btn btn-primary mx-2" to='/login' role="button">Login</Link>
-                  <Link className="btn btn-primary mx-2" to='/signup' role="button">SignUp</Link>
+                  <Link className="btn btn-primary mx-2 mb-2 mb-lg-0" to='/login' role="button">Login</Link>
+                  <Link className="btn btn-primary mx-2 mb-2 mb-lg-0" to='/signup' role="button">SignUp</Link>
                 </form> :
-                <button className="btn btn-primary mx-2" onClick={handleLogOut}>Logout</button>}
+                <button className="btn btn-primary mx-2 mb-2 mb-lg-0" onClick={handleLogOut}>Logout</button>}
               <div className={`form-check form-switch text-${(props.mode === 'light') ? 'dark' : 'light'} mx-2`}>
                 <input 
                   className="form-check-input" 
@@ -49,7 +49,7 @@ const NavBar = (props) => {
                   htmlFor="flexSwitchCheckDefault"
                   style={{ marginLeft: '0.5rem'}} // Space between switch and label
                 >
-                  {props.mode === 'light' ? 'Dark Mode' : 'Light Mode'}
+                  {props.mode === 'light' ? 'Enable Dark Mode' : 'Enable Light Mode'}
                 </label>
               </div>
             </div>
