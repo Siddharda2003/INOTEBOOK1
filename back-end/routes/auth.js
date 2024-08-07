@@ -1,4 +1,3 @@
-const express = require('express');
 const User = require('../models/Users');
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
@@ -6,9 +5,6 @@ const router = express.Router();
 const {body,validationResult} = require('express-validator');
 const fetchuser = require('../middlewares/fetchuser');
 const secretKey = "SiddhuIsAGoodBoy$$"
-const cors = require("cors");
-const app = express();
-app.use(cors());
  //ROUTER 1:creating a user with end point "api/auth/createuser".no login required
 router.post('/createuser',[
     body('name',"Enter a valid name").isLength({min:3}),
