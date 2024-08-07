@@ -23,7 +23,7 @@ const AddNote = (props) => {
   return (
     <div>
       <div style={{color:(props.mode==='light')?'black':'white'}} className="container my-3">
-        <h2>Hello, {user?.name || ''}! Ready to add a new note?</h2>
+        <h2>Hello {user?.name || ''} Ready to add a new note?</h2>
         <form className="my-3">
           <div className="col-md-6 mb-3">
             <label htmlFor="title" className="form-label">Title</label>
